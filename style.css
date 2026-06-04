@@ -1,3 +1,4 @@
+
 *{
     margin:0;
     padding:0;
@@ -14,12 +15,17 @@ body{
     color:white;
 }
 
+
 header{
     display:flex;
     justify-content:space-between;
     align-items:center;
     padding:20px 50px;
     background:#222;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    backdrop-filter:blur(10px);
 }
 
 header h2{
@@ -32,14 +38,34 @@ nav a{
     margin-left:20px;
     font-size:18px;
     transition:0.3s;
+    position:relative;
 }
 
 nav a:hover{
     color:#00f2fe;
 }
+
+nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0;
+    height:2px;
+    background:#00f2fe;
+    transition:0.3s;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+
+
 .hero{
     text-align:center;
     padding:100px 20px;
+    animation:slideUp 1.5s ease;
 }
 
 .profile-pic{
@@ -49,11 +75,21 @@ nav a:hover{
     object-fit:cover;
     border:4px solid white;
     margin-bottom:20px;
+
+    box-shadow:0 0 25px rgba(255,255,255,0.7);
+
+    animation:float 3s ease-in-out infinite;
+    transition:all 0.4s ease;
+}
+
+.profile-pic:hover{
+    transform:scale(1.08);
 }
 
 .hero h1{
     font-size:55px;
     margin-bottom:15px;
+    animation:fadeIn 2s ease-in-out;
 }
 
 .hero h3{
@@ -67,6 +103,7 @@ nav a:hover{
     font-size:20px;
     line-height:1.6;
     margin-bottom:30px;
+    animation:fadeText 3s ease;
 }
 
 .btn{
@@ -78,12 +115,18 @@ nav a:hover{
     border-radius:5px;
     font-weight:bold;
     transition:0.3s;
+
+    box-shadow:0 4px 15px rgba(0,0,0,0.2);
 }
 
 .btn:hover{
     background:#222;
     color:white;
+    transform:scale(1.1);
+    box-shadow:0 0 20px rgba(255,255,255,0.7);
 }
+
+
 
 .about,
 .skills,
@@ -108,6 +151,7 @@ nav a:hover{
     font-size:18px;
 }
 
+
 .skills-container{
     display:flex;
     justify-content:center;
@@ -121,7 +165,14 @@ nav a:hover{
     padding:15px 30px;
     border-radius:10px;
     font-weight:bold;
+    transition:0.3s ease;
 }
+
+.skill-box:hover{
+    transform:translateY(-10px);
+    box-shadow:0 10px 20px rgba(0,0,0,0.3);
+}
+
 
 .project-card{
     background:white;
@@ -130,9 +181,123 @@ nav a:hover{
     margin:20px auto;
     padding:20px;
     border-radius:10px;
+    transition:0.3s ease;
 }
+
+.project-card:hover{
+    transform:scale(1.05);
+    box-shadow:0 10px 20px rgba(0,0,0,0.3);
+}
+
+
 
 .contact p{
     margin-top:10px;
     font-size:18px;
+}
+.contact a{
+    color:#ffffff;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.contact a:hover{
+    color:#ffd700;
+}
+
+
+@keyframes slideUp{
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeText{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-15px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+}
+
+
+@media(max-width:768px){
+
+    header{
+        flex-direction:column;
+        padding:20px;
+    }
+
+    nav{
+        margin-top:15px;
+    }
+
+    nav a{
+        display:inline-block;
+        margin:10px;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .hero h3{
+        font-size:22px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .profile-pic{
+        width:150px;
+        height:150px;
+    }
+}
+footer{
+    background:#222;
+    text-align:center;
+    padding:25px;
+    margin-top:40px;
+}
+
+footer p{
+    margin:5px 0;
+    color:white;
+}
+
+#typing{
+    min-height:40px;
+    font-weight:bold;
 }
