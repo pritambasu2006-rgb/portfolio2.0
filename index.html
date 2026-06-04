@@ -3,94 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pritam Basu Portfolio</title>
+    <title>Pritam Basu | Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
+    <!-- HEADER -->
+
     <header>
-        <h2>Portfolio</h2>
+        <h2>Pritam Basu</h2>
 
         <nav>
-            <a href="#">Home</a>
             <a href="#about">About</a>
+            <a href="#education">Education</a>
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
 
+    <!-- HERO -->
+
     <section class="hero">
 
-     <img src="profile.jpg" alt="Profile Photo" class="profile-pic">
-        <h1>Hi, I'm Pritam Basu</h1>
+        <img src="images/profile.jpg"
+             alt="Profile Photo"
+             class="profile-pic">
 
-    <h3>Computer Science & Engineering Student</h3>
+        <h1>Pritam Basu</h1>
+
+        <h3 id="typing"></h3>
 
         <p>
-            I am a passionate Computer Science and Engineering student at
-           Mallabhum Institute of Technology. I enjoy learning Python,
-          Web Development, HTML, CSS and C++. I am interested in
-          building practical projects and improving my programming skills.
+            Passionate about building modern websites,
+            solving problems, and learning new technologies.
+            Currently pursuing Computer Science & Engineering
+            and continuously improving my skills in Web
+            Development, Programming, and Software Development.
         </p>
 
+        <a href="#projects" class="btn">View Projects</a>
         <a href="#contact" class="btn">Contact Me</a>
 
     </section>
 
+    <!-- ABOUT -->
+
     <section id="about" class="about">
+
         <h2>About Me</h2>
 
         <p>
-            I am a passionate Computer Science and Engineering student at
-           Mallabhum Institute of Technology. I enjoy learning Python,
-            Web Development, HTML, CSS and C++. I am interested in
-            building practical projects and improving my programming skills.
+            Hello! I'm Pritam Basu, a Computer Science Engineering student
+            with a strong interest in Web Development and Software Engineering.
+
+            I enjoy creating responsive websites, learning modern technologies,
+            and continuously improving my programming skills.
+
+            My goal is to become a skilled software developer and contribute
+            to innovative projects that solve real-world problems.
         </p>
+
     </section>
+
+    <!-- EDUCATION -->
+
+    <section id="education" class="about">
+
+        <h2>Education</h2>
+
+        <p>
+            <strong>B.Tech in Computer Science & Engineering</strong><br>
+            Mallabhum Institute of Technology<br>
+            Expected Graduation: 2028
+        </p>
+
+    </section>
+
+    <!-- SKILLS -->
 
     <section id="skills" class="skills">
-        <h2>My Skills</h2>
+
+        <h2>Technical Skills</h2>
 
         <div class="skills-container">
+
+            <div class="skill-box">HTML5</div>
+            <div class="skill-box">CSS3</div>
+            <div class="skill-box">JavaScript</div>
             <div class="skill-box">Python</div>
-            <div class="skill-box">HTML</div>
-            <div class="skill-box">CSS</div>
-            <div class="skill-box">C++</div>
+            <div class="skill-box">Git</div>
+            <div class="skill-box">GitHub</div>
+            <div class="skill-box">Responsive Design</div>
+            <div class="skill-box">Problem Solving</div>
+
         </div>
+
     </section>
+
+    <!-- PROJECTS -->
 
     <section id="projects" class="projects">
-        <h2>Projects</h2>
+
+        <h2>Featured Projects</h2>
 
         <div class="project-card">
-            <h3>Age Calculator</h3>
-            <p>Age calculation project using Python.</p>
+
+            <h3>Personal Portfolio Website</h3>
+
+            <p>
+                Designed and developed a responsive portfolio website
+                using HTML, CSS, GitHub and GitHub Pages.
+            </p>
+
         </div>
 
         <div class="project-card">
-            <h3>Portfolio Website</h3>
-            <p>Personal portfolio created using HTML and CSS.</p>
+
+            <h3>Web Development Learning Journey</h3>
+
+            <p>
+                Continuously building and improving web development
+                projects while learning modern front-end technologies.
+            </p>
+
         </div>
+
     </section>
+
+    <!-- CONTACT -->
 
     <section id="contact" class="contact">
-        <h2>Contact</h2>
 
-        <p>Email: pritambasu2006@gmail.com</p>
+        <h2>Let's Connect</h2>
+
         <p>
-    LinkedIn:
-    <a href="https://www.linkedin.com/in/pritam-basu-33579630b" target="_blank">
-        View Profile
-    </a>
-</p>
-       <p>
-    GitHub:
-    <a href="https://github.com/pritambasu2006-rgb" target="_blank">
-        View GitHub
-    </a>
-</p>
+            📧 Email:
+            <a href="mailto:pritambasu2006@gmail.com">
+                pritambasu2006@gmail.com
+            </a>
+        </p>
+
+        <p>
+            💻 GitHub:
+            <a href="https://github.com/pritambasu2006-rgb" target="_blank">
+                github.com/pritambasu2006-rgb
+            </a>
+        </p>
+
+        <p>
+            🔗 LinkedIn:
+            <a href="https://www.linkedin.com/in/pritam-basu-33579630b" target="_blank">
+                linkedin.com/in/pritam-basu-33579630b
+            </a>
+        </p>
+
     </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+        <p>Designed & Developed by Pritam Basu ❤️</p>
+        <p>© 2025 All Rights Reserved</p>
+    </footer>
+
+    <!-- TYPING ANIMATION -->
+
+    <script>
+        const text = "Computer Science Engineering Student | Aspiring Web Developer";
+        let i = 0;
+
+        function typeWriter() {
+            if (i < text.length) {
+                document.getElementById("typing").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 80);
+            }
+        }
+
+        window.onload = typeWriter;
+    </script>
 
 </body>
 </html>
